@@ -27,3 +27,63 @@ There are **three modes** of operation:
 To achieve the best results, it is essential to compare all outputs of this software, for which an option to output to a file is available. Since the software accepts an input file in plain text format encoded in Unicode, the output will be similar, with no additional encoding taking place. The software is released under the Apache Version 2.0 license and is available on GitHub in an open-access format.
 
 The script does not have a separate help page or any other launch keys. All nuances, options, and input requests are specified within the script itself or reflected in comments in the code. Please note that the script has been written by a **non-professional programmer**, and may even be from someone without programming experience.
+
+## Version history (some outside the repository)
+
+0.8.1 (October 2024) — A multitude of comments on various issues related to the script's operation has been added to the code.
+
+0.8.0 (October 2024) — Official release of the script timed with the submission of research for journal editing.
+
+0.7.3 (October 2024) — A function for dynamic translation of output using the MyMemory online service has been added and commented out.
+
+0.7.2 (October 2024) — A function for drawing a graphical representation of word vectors for each mode has been added.
+
+0.7.1 (October 2024) — The `spaCy` semantic mode has been removed due to unstable output. Overall, there are three modes: word frequency, word combination frequency, and the similarity level between the word entered by the user and words in the text.
+
+0.7.0 (October 2024) — Removed `Gensim` and the custom word vector model in favor of the `spaCy` word vector model. The corresponding mode has been rewritten.
+
+0.6.1 (October 2024) — Changed the formatting of status messages and user prompts.
+
+0.6.0 (October 2024) — Another release version. Debugging of the code.
+
+0.5.5 (October 2024) — Added two sampling filters: by the number of matches and by the level of similarity.
+
+0.5.4 (October 2024) — Completed work on the fourth user mode. It calculates the similarity level between the word entered by the user and other words in the text. The functionality has been tested on both Russian and English texts.
+
+0.5.3 (October 2024) — Transitioned from the re library to the regex library to support the `\p{Latin}` group for filtering extended Latin characters. An optional regular expression `[a-zA-Z]` has been added to limit to standard Latin characters.
+
+0.5.2 (October 2024) — Filtering for the letter ё has been modified to account for the rare case when ё is written as e with a diaeresis.
+
+0.5.1 (October 2024) — The available Russian vector model uses part-of-speech tags for each word (for an unknown reason). A feature has been included to add such tags. For simplicity, the tags `NOUN, ADJ, VERB, and ADV` are used.
+
+0.5.0 (October 2024) — A fourth mode has been added, which computes the similarity of vector words. It works on test text, but produces errors on more complex samples. The number of libraries used has been changed.
+
+0.4.3 (October 2024) — Text filtering has been changed to use a regular expression. It is now possible to exclude everything from the text except for Cyrillic, basic Latin or extended Latin characters.
+
+0.4.2 (October 2024) — The function call to `spaCy` has been fixed. A missing option for filtering numbers has been added.
+
+0.4.1 (October 2024) — Comments have been added.
+
+0.4.0 (October 2024) — The second version of the script release. Moved away from NLTK in favor of the built-in `collections.Counter` to reduce the number of dependencies. Currently, the only additional dependency is `spaCy`, which requires downloading a linguistic model (the script specifies options for both English and Russian languages).
+
+0.3.2 (October 2024) — The regular expression for text preparation has been edited considering `spaCy`'s capabilities (`spaCy` handles filtering of numbers and punctuation more effectively).
+
+0.3.1 (October 2024) — English language support added through user dialogue with the choice of `spaCy` linguistic model.
+
+0.3.0 (October 2024) — The code has been completely rewritten to leverage `spaCy`'s capabilities. Now, normalization and tokenization of words are done with this library.
+
+0.2.1 (September 2024) — Extraction of the file-saving option into a separate function.
+
+0.2.0 (September 2024) — Abandoning `PyMystem` in favor of `spaCy`. The semantic mode has been rewritten accordingly.
+
+0.1.1 (September 2024) — The code has been proofread, and variables have been given clear names.
+
+0.1.0 (September 2024) — The first release version of the script. All three user modes are operational, and dialogues are present for each scenario.
+
+0.0.4 (September 2024) — Code quality improved; the first two user modes brought to a working version.
+
+0.0.3 (September 2024) — User dialogues added.
+
+0.0.2 (September 2024) — Functions introduced to improve code quality and enhance its modularity for future changes.
+
+0.0.1 (April 2024) — The first version of the script. Uses `PyMorhy`, `PyMystem`, and `NLTK` for semantic analysis and word counting. There are significant limitations (the script needs to be manually edited for any changes in its operation). The first trial of the script has been conducted.
